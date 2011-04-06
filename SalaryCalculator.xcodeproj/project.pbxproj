@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		035F29540F5D313000553EDE /* SalaryCalculator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 035F29520F5D313000553EDE /* SalaryCalculator.xib */; };
+		035F29580F5D318000553EDE /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 035F29570F5D318000553EDE /* MainController.m */; };
+		035F29750F5D3B1500553EDE /* TaxTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 035F29740F5D3B1500553EDE /* TaxTable.m */; };
+		035F29810F5D419600553EDE /* 29.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F29780F5D419600553EDE /* 29.csv */; };
+		035F29820F5D419600553EDE /* 30.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F29790F5D419600553EDE /* 30.csv */; };
+		035F29830F5D419600553EDE /* 31.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297A0F5D419600553EDE /* 31.csv */; };
+		035F29840F5D419600553EDE /* 32.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297B0F5D419600553EDE /* 32.csv */; };
+		035F29850F5D419600553EDE /* 33.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297C0F5D419600553EDE /* 33.csv */; };
+		035F29860F5D419600553EDE /* 34.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297D0F5D419600553EDE /* 34.csv */; };
+		035F29870F5D419600553EDE /* 35.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297E0F5D419600553EDE /* 35.csv */; };
+		035F29880F5D419600553EDE /* 36.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297F0F5D419600553EDE /* 36.csv */; };
+		035F29890F5D419600553EDE /* 37.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F29800F5D419600553EDE /* 37.csv */; };
+		035F2A880F5DBE4000553EDE /* SalaryCalculator.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */; };
+		03FFC7BD12C0AC8200A41064 /* EconomacsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */; };
+		03FFC7DB12C0AE1E00A41064 /* TaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC7DA12C0AE1E00A41064 /* TaxController.m */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		035F2A8B0F5DBE4700553EDE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Library/Application Support/Economacs4/Plug-ins/";
+			dstSubfolderSpec = 0;
+			files = (
+				035F2A880F5DBE4000553EDE /* SalaryCalculator.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		035F29530F5D313000553EDE /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SalaryCalculator.xib; sourceTree = "<group>"; };
+		035F29560F5D318000553EDE /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		035F29570F5D318000553EDE /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		035F29730F5D3B1500553EDE /* TaxTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxTable.h; sourceTree = "<group>"; };
+		035F29740F5D3B1500553EDE /* TaxTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxTable.m; sourceTree = "<group>"; };
+		035F29780F5D419600553EDE /* 29.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 29.csv; sourceTree = "<group>"; };
+		035F29790F5D419600553EDE /* 30.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 30.csv; sourceTree = "<group>"; };
+		035F297A0F5D419600553EDE /* 31.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 31.csv; sourceTree = "<group>"; };
+		035F297B0F5D419600553EDE /* 32.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 32.csv; sourceTree = "<group>"; };
+		035F297C0F5D419600553EDE /* 33.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 33.csv; sourceTree = "<group>"; };
+		035F297D0F5D419600553EDE /* 34.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 34.csv; sourceTree = "<group>"; };
+		035F297E0F5D419600553EDE /* 35.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 35.csv; sourceTree = "<group>"; };
+		035F297F0F5D419600553EDE /* 36.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 36.csv; sourceTree = "<group>"; };
+		035F29800F5D419600553EDE /* 37.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 37.csv; sourceTree = "<group>"; };
+		03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EconomacsSDK.framework; path = "/Users/erik/Program/Economacs-build/Release/EconomacsSDK.framework"; sourceTree = "<absolute>"; };
+		03FFC7D912C0AE1E00A41064 /* TaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxController.h; sourceTree = "<group>"; };
+		03FFC7DA12C0AE1E00A41064 /* TaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxController.m; sourceTree = "<group>"; };
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* SalaryCalculator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryCalculator_Prefix.pch; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryCalculator.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				03FFC7BD12C0AC8200A41064 /* EconomacsSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* SalaryCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = SalaryCalculator;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+				03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				035F29780F5D419600553EDE /* 29.csv */,
+				035F29790F5D419600553EDE /* 30.csv */,
+				035F297A0F5D419600553EDE /* 31.csv */,
+				035F297B0F5D419600553EDE /* 32.csv */,
+				035F297C0F5D419600553EDE /* 33.csv */,
+				035F297D0F5D419600553EDE /* 34.csv */,
+				035F297E0F5D419600553EDE /* 35.csv */,
+				035F297F0F5D419600553EDE /* 36.csv */,
+				035F29800F5D419600553EDE /* 37.csv */,
+				035F29520F5D313000553EDE /* SalaryCalculator.xib */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				03FFC7D912C0AE1E00A41064 /* TaxController.h */,
+				03FFC7DA12C0AE1E00A41064 /* TaxController.m */,
+				035F29730F5D3B1500553EDE /* TaxTable.h */,
+				035F29740F5D3B1500553EDE /* TaxTable.m */,
+				035F29560F5D318000553EDE /* MainController.h */,
+				035F29570F5D318000553EDE /* MainController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* SalaryCalculator_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* SalaryCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "SalaryCalculator" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				035F2A8B0F5DBE4700553EDE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SalaryCalculator;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = SalaryCalculator;
+			productReference = 8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "SalaryCalculator" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* SalaryCalculator */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* SalaryCalculator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				035F29540F5D313000553EDE /* SalaryCalculator.xib in Resources */,
+				035F29810F5D419600553EDE /* 29.csv in Resources */,
+				035F29820F5D419600553EDE /* 30.csv in Resources */,
+				035F29830F5D419600553EDE /* 31.csv in Resources */,
+				035F29840F5D419600553EDE /* 32.csv in Resources */,
+				035F29850F5D419600553EDE /* 33.csv in Resources */,
+				035F29860F5D419600553EDE /* 34.csv in Resources */,
+				035F29870F5D419600553EDE /* 35.csv in Resources */,
+				035F29880F5D419600553EDE /* 36.csv in Resources */,
+				035F29890F5D419600553EDE /* 37.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035F29580F5D318000553EDE /* MainController.m in Sources */,
+				035F29750F5D3B1500553EDE /* TaxTable.m in Sources */,
+				03FFC7DB12C0AE1E00A41064 /* TaxController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		035F29520F5D313000553EDE /* SalaryCalculator.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				035F29530F5D313000553EDE /* English */,
+			);
+			name = SalaryCalculator.xib;
+			sourceTree = "<group>";
+		};
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../build/Release\"",
+					"\"$(SRCROOT)/../Economacs-build/Release\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SalaryCalculator_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = SalaryCalculator;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../build/Release\"",
+					"\"$(SRCROOT)/../Economacs-build/Release\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SalaryCalculator_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Application Support/Economacs/Plug-ins/";
+				PRODUCT_NAME = SalaryCalculator;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = "/Users/erik/Program/Economacs-build/Release";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = "/Users/erik/Program/Economacs-build/Release";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "SalaryCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "SalaryCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
