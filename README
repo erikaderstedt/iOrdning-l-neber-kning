@@ -1,10 +1,18 @@
-Löneberäkningsmodul till iOrdning 4.
+Löneberäkningsmodul till iOrdning 5.
 
+Innehåller 2012 års skattetabeller f.n.
 Tack till Sebastian Wallin för 2011 års skattetabeller.
-En färdigkompilerad insticksmodul finns här:
+
+iOrdning 5
+----------
+En färdigkompilerad insticksmodul finns under "Downloads" här på Github:
+https://github.com/downloads/erikaderstedt/iOrdning-l-neber-kning/SalaryCalculator.bundle.zip
+
+Installera genom att gå upp i menyn iOrdning->Hantera insticksmoduler.
+Observera att detta bara fungerar om du har köpt iOrdning direkt av oss eller i butik. Versionen som ligger på Mac App Store stödjer inte insticksmoduler p.g.a. Apples begränsningar där.
+
+iOrdning 4
+----------
+En färdigkompilerad insticksmodul för iOrdning 4 finns här:
 http://www.aderstedtsoftware.com/downloads/SalaryCalculator.bundle.zip
-
-För att kunna bygga projektet behöver man peka om EconomacsSDK.framework. Detta ramverk ligger inuti iOrdning. Kopiera ut och lägg det där du kan se det inifrån Xcode, och ändra sökväg till EconomacsSDK.framework.
-
-Installeras i ~/Library/Application Support/Economacs4/Plug-ins per automatik.
 
