@@ -16,7 +16,13 @@
 - (id)initWithPath:(NSString *)path {
 	if (self = [super init]) {
 		name = [[[[path lastPathComponent] componentsSeparatedByString:@"."] objectAtIndex:0] retain];
-		NSString *all = [NSString stringWithContentsOfFile:path];
+        NSError *error = nil;
+		NSString *all = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        if (all == nil) {
+            NSAlert *alert = [NSAlert alertWithError:error];
+            [alert runModal];
+            return nil;
+        }
 		NSArray *rows = [all componentsSeparatedByString:@"\n"];
 		
 		length = [rows count];

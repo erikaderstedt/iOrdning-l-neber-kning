@@ -131,7 +131,7 @@
 - (IBAction)updateCalculations:(id)sender {
 	if (selectedTable == nil) return;
 	
-	int t = [sender tag];
+	int t = [(NSView *)sender tag];
 	double b, u, l, d;
 	switch (t) {
 		case 1: // Bruttolön
@@ -208,7 +208,7 @@
 	r.credit = [self.bruttolon decimalNumberBySubtracting:self.utbetalning];
 	
 	e.name = self.entryTitle;
-	e.date = self.paymentDay;
+	e.date = [self.paymentDay dateIndex];
 	e.fiscalYear = nil;
 	e.number = nil;
 	

@@ -20,7 +20,7 @@
 		035F29880F5D419600553EDE /* 36.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297F0F5D419600553EDE /* 36.csv */; };
 		035F29890F5D419600553EDE /* 37.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F29800F5D419600553EDE /* 37.csv */; };
 		035F2A880F5DBE4000553EDE /* SalaryCalculator.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */; };
-		03FFC7BD12C0AC8200A41064 /* EconomacsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */; };
+		0365B48E1670883400A7AB2A /* EconomacsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0365B48D1670883400A7AB2A /* EconomacsSDK.framework */; };
 		03FFC7DB12C0AE1E00A41064 /* TaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC7DA12C0AE1E00A41064 /* TaxController.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -54,7 +54,7 @@
 		035F297E0F5D419600553EDE /* 35.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 35.csv; sourceTree = "<group>"; };
 		035F297F0F5D419600553EDE /* 36.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 36.csv; sourceTree = "<group>"; };
 		035F29800F5D419600553EDE /* 37.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 37.csv; sourceTree = "<group>"; };
-		03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EconomacsSDK.framework; path = "/Users/erik/Program/Economacs-build/Release/EconomacsSDK.framework"; sourceTree = "<absolute>"; };
+		0365B48D1670883400A7AB2A /* EconomacsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EconomacsSDK.framework; path = ../../../../../Applications/Economacs.app/Contents/Frameworks/EconomacsSDK.framework; sourceTree = SDKROOT; };
 		03FFC7D912C0AE1E00A41064 /* TaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxController.h; sourceTree = "<group>"; };
 		03FFC7DA12C0AE1E00A41064 /* TaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxController.m; sourceTree = "<group>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -73,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				03FFC7BD12C0AC8200A41064 /* EconomacsSDK.framework in Frameworks */,
+				0365B48E1670883400A7AB2A /* EconomacsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +95,9 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0365B48D1670883400A7AB2A /* EconomacsSDK.framework */,
 				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
 				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
-				03FFC7BC12C0AC8200A41064 /* EconomacsSDK.framework */,
 			);
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -272,11 +272,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../build/Release\"",
-					"\"$(SRCROOT)/../Economacs-build/Release\"",
+					"\"$(SYSTEM_APPS_DIR)/Economacs.app/Contents/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -287,6 +287,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = SalaryCalculator;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -295,11 +296,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../build/Release\"",
-					"\"$(SRCROOT)/../Economacs-build/Release\"",
+					"\"$(SYSTEM_APPS_DIR)/Economacs.app/Contents/Frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -307,6 +308,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Economacs/Plug-ins/";
 				PRODUCT_NAME = SalaryCalculator;
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -318,7 +320,7 @@
 					x86_64,
 					i386,
 				);
-				FRAMEWORK_SEARCH_PATHS = "/Users/erik/Program/Economacs-build/Release";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -338,7 +340,7 @@
 					x86_64,
 					i386,
 				);
-				FRAMEWORK_SEARCH_PATHS = "/Users/erik/Program/Economacs-build/Release";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
