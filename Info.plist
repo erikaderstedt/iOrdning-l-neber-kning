@@ -22,10 +22,8 @@
 	<string>2</string>
 	<key>NSPrincipalClass</key>
 	<string>MainController</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>© Aderstedt Software AB 2012</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2013.1</string>
+	<string>2013.2</string>
 	<key>CFBundleDisplayName</key>
 	<string>Löneberäkningsmodul iOrdning 5</string>
 </dict>

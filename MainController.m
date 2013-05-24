@@ -48,7 +48,7 @@
 
 
 - (NSString *)title {
-	return @"Löneberäkning 2012";
+	return @"Löneberäkning 2013";
 }
 
 - (enum ASPluginType)type {
