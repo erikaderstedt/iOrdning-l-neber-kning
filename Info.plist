@@ -23,7 +23,7 @@
 	<key>NSPrincipalClass</key>
 	<string>MainController</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2013.2</string>
+	<string>2013.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>Löneberäkningsmodul iOrdning 5</string>
 </dict>
