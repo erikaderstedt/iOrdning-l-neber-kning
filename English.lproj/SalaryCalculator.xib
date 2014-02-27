@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
+        <deployment defaultVersion="1070" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
@@ -35,9 +35,9 @@
                         <menu key="menu" id="121"/>
                     </popUpButtonCell>
                     <connections>
+                        <binding destination="180" name="selectedObject" keyPath="account_arbetsgivaravgifter_kostnad" previousBinding="232" id="233"/>
                         <binding destination="128" name="content" keyPath="arrangedObjects" id="132"/>
                         <binding destination="128" name="contentValues" keyPath="arrangedObjects.accountDescription" previousBinding="132" id="232"/>
-                        <binding destination="180" name="selectedObject" keyPath="account_arbetsgivaravgifter_kostnad" previousBinding="232" id="233"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="110">
@@ -61,22 +61,13 @@
                     </buttonCell>
                     <connections>
                         <action selector="createEntry:" target="180" id="218"/>
-                        <binding destination="180" name="enabled2" keyPath="account_lonekostnad" previousBinding="197" id="203">
-                            <dictionary key="options">
-                                <string key="NSValueTransformerName">NSIsNotNil</string>
-                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                <integer key="NSNullPlaceholder" value="-1"/>
-                            </dictionary>
-                        </binding>
                         <binding destination="180" name="enabled3" keyPath="account_arbetsgivaravgifter" previousBinding="203" id="208">
                             <dictionary key="options">
                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                 <integer key="NSNullPlaceholder" value="-1"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                             </dictionary>
                         </binding>
                         <binding destination="180" name="enabled4" keyPath="account_arbetsgivaravgifter_kostnad" previousBinding="208" id="212">
@@ -84,8 +75,22 @@
                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                 <integer key="NSNullPlaceholder" value="-1"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="180" name="enabled" keyPath="account_krediteras" id="197">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="180" name="enabled2" keyPath="account_lonekostnad" previousBinding="197" id="203">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                             </dictionary>
                         </binding>
                         <binding destination="180" name="enabled5" keyPath="account_skatt" previousBinding="212" id="215">
@@ -93,8 +98,8 @@
                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                 <integer key="NSNullPlaceholder" value="-1"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                             </dictionary>
                         </binding>
                         <binding destination="180" name="enabled6" keyPath="entryTitle" previousBinding="215" id="217">
@@ -102,13 +107,8 @@
                                 <string key="NSValueTransformerName">NSIsNotNil</string>
                                 <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                 <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                 <integer key="NSNullPlaceholder" value="-1"/>
-                            </dictionary>
-                        </binding>
-                        <binding destination="180" name="enabled" keyPath="account_krediteras" id="197">
-                            <dictionary key="options">
-                                <string key="NSValueTransformerName">NSIsNotNil</string>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                             </dictionary>
                         </binding>
                     </connections>
@@ -146,9 +146,9 @@
                         <menu key="menu" id="100"/>
                     </popUpButtonCell>
                     <connections>
+                        <binding destination="180" name="selectedObject" keyPath="account_krediteras" previousBinding="240" id="241"/>
                         <binding destination="129" name="content" keyPath="arrangedObjects" id="134"/>
                         <binding destination="129" name="contentValues" keyPath="arrangedObjects.accountDescription" previousBinding="134" id="240"/>
-                        <binding destination="180" name="selectedObject" keyPath="account_krediteras" previousBinding="240" id="241"/>
                     </connections>
                 </popUpButton>
                 <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="96">
@@ -163,7 +163,7 @@
                         <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
                             <!--1982-02-12 08:00:00 -0800-->
                             <timeZone key="timeZone" name="US/Pacific">
-                                <mutableData key="data">
+                                <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -181,7 +181,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                             </timeZone>
                         </calendarDate>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -218,9 +218,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <menu key="menu" id="86"/>
                     </popUpButtonCell>
                     <connections>
+                        <binding destination="180" name="selectedObject" keyPath="account_lonekostnad" previousBinding="236" id="237"/>
                         <binding destination="130" name="content" keyPath="arrangedObjects" id="133"/>
                         <binding destination="130" name="contentValues" keyPath="arrangedObjects.accountDescription" previousBinding="133" id="236"/>
-                        <binding destination="180" name="selectedObject" keyPath="account_lonekostnad" previousBinding="236" id="237"/>
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="76">
@@ -232,9 +232,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <menu key="menu" id="78"/>
                     </popUpButtonCell>
                     <connections>
+                        <binding destination="180" name="selectedObject" keyPath="account_arbetsgivaravgifter" previousBinding="228" id="229"/>
                         <binding destination="127" name="content" keyPath="arrangedObjects" id="131"/>
                         <binding destination="127" name="contentValues" keyPath="arrangedObjects.accountDescription" previousBinding="131" id="228"/>
-                        <binding destination="180" name="selectedObject" keyPath="account_arbetsgivaravgifter" previousBinding="228" id="229"/>
                     </connections>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="70">
@@ -246,9 +246,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <menu key="menu" id="72"/>
                     </popUpButtonCell>
                     <connections>
+                        <binding destination="180" name="selectedObject" keyPath="account_skatt" previousBinding="226" id="227"/>
                         <binding destination="116" name="content" keyPath="arrangedObjects" id="118"/>
                         <binding destination="116" name="contentValues" keyPath="arrangedObjects.accountDescription" previousBinding="118" id="226"/>
-                        <binding destination="180" name="selectedObject" keyPath="account_skatt" previousBinding="226" id="227"/>
                     </connections>
                 </popUpButton>
                 <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="69">
@@ -428,7 +428,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="43">
                     <rect key="frame" x="127" y="406" width="32" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2013" id="44">
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2014" id="44">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -465,9 +465,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </popUpButtonCell>
                     <connections>
                         <action selector="updateCalculations:" target="180" id="223"/>
+                        <binding destination="180" name="selectedObject" keyPath="selectedTable" previousBinding="184" id="186"/>
                         <binding destination="180" name="content" keyPath="taxTables" id="181"/>
                         <binding destination="180" name="contentValues" keyPath="taxTables.name" previousBinding="181" id="184"/>
-                        <binding destination="180" name="selectedObject" keyPath="selectedTable" previousBinding="184" id="186"/>
                     </connections>
                 </popUpButton>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2">
