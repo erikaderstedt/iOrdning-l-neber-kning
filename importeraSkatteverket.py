@@ -13,7 +13,7 @@ s = f.readlines()
 f.close()
 
 t = []
-for num in range(29,38):
+for num in range(29,41):
 	t.append([])
 
 for line in s:
@@ -21,9 +21,12 @@ for line in s:
 	v1 = line[5:12].strip()
 	v2 = line[12:19].strip()
 	v3 = line[19:24].strip()
-	t[sats-29].append("%s;%s;%s" % (v1,v2,v3))
+	try:
+		t[sats-29].append("%s;%s;%s" % (v1,v2,v3))
+	except:
+		print line,
 	
-for num in range(29,38):
+for num in range(29,41):
 	i = num - 29
 	f = open('%d.csv' % (num,),'w')
 	for line in t[i]:

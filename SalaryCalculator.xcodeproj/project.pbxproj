@@ -20,7 +20,10 @@
 		035F29880F5D419600553EDE /* 36.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F297F0F5D419600553EDE /* 36.csv */; };
 		035F29890F5D419600553EDE /* 37.csv in Resources */ = {isa = PBXBuildFile; fileRef = 035F29800F5D419600553EDE /* 37.csv */; };
 		035F2A880F5DBE4000553EDE /* SalaryCalculator.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* SalaryCalculator.bundle */; };
-		03818997174DF69F0041F567 /* EconomacsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03818996174DF69F0041F567 /* EconomacsSDK.framework */; };
+		039D25461A7280E20093F5D3 /* 38.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039D25431A7280E20093F5D3 /* 38.csv */; };
+		039D25471A7280E20093F5D3 /* 39.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039D25441A7280E20093F5D3 /* 39.csv */; };
+		039D25481A7280E20093F5D3 /* 40.csv in Resources */ = {isa = PBXBuildFile; fileRef = 039D25451A7280E20093F5D3 /* 40.csv */; };
+		039D254C1A7282330093F5D3 /* EconomacsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039D254B1A7282330093F5D3 /* EconomacsSDK.framework */; };
 		03FFC7DB12C0AE1E00A41064 /* TaxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC7DA12C0AE1E00A41064 /* TaxController.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -54,7 +57,10 @@
 		035F297E0F5D419600553EDE /* 35.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 35.csv; sourceTree = "<group>"; };
 		035F297F0F5D419600553EDE /* 36.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 36.csv; sourceTree = "<group>"; };
 		035F29800F5D419600553EDE /* 37.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 37.csv; sourceTree = "<group>"; };
-		03818996174DF69F0041F567 /* EconomacsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EconomacsSDK.framework; path = ../../../../Applications/Economacs.app/Contents/Frameworks/EconomacsSDK.framework; sourceTree = "<group>"; };
+		039D25431A7280E20093F5D3 /* 38.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 38.csv; sourceTree = "<group>"; };
+		039D25441A7280E20093F5D3 /* 39.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 39.csv; sourceTree = "<group>"; };
+		039D25451A7280E20093F5D3 /* 40.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 40.csv; sourceTree = "<group>"; };
+		039D254B1A7282330093F5D3 /* EconomacsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EconomacsSDK.framework; path = "../../Library/Developer/Xcode/DerivedData/iOrdning-bmdnwbtjuqlaqehkwpoczzuhhbnc/Build/Products/Debug/EconomacsSDK.framework"; sourceTree = "<group>"; };
 		03FFC7D912C0AE1E00A41064 /* TaxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxController.h; sourceTree = "<group>"; };
 		03FFC7DA12C0AE1E00A41064 /* TaxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxController.m; sourceTree = "<group>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -72,8 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039D254C1A7282330093F5D3 /* EconomacsSDK.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				03818997174DF69F0041F567 /* EconomacsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +101,7 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				03818996174DF69F0041F567 /* EconomacsSDK.framework */,
+				039D254B1A7282330093F5D3 /* EconomacsSDK.framework */,
 				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
 				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
 			);
@@ -105,6 +111,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				039D25431A7280E20093F5D3 /* 38.csv */,
+				039D25441A7280E20093F5D3 /* 39.csv */,
+				039D25451A7280E20093F5D3 /* 40.csv */,
 				035F29780F5D419600553EDE /* 29.csv */,
 				035F29790F5D419600553EDE /* 30.csv */,
 				035F297A0F5D419600553EDE /* 31.csv */,
@@ -196,6 +205,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "SalaryCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -221,7 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039D25471A7280E20093F5D3 /* 39.csv in Resources */,
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				039D25481A7280E20093F5D3 /* 40.csv in Resources */,
 				035F29540F5D313000553EDE /* SalaryCalculator.xib in Resources */,
 				035F29810F5D419600553EDE /* 29.csv in Resources */,
 				035F29820F5D419600553EDE /* 30.csv in Resources */,
@@ -232,6 +244,7 @@
 				035F29870F5D419600553EDE /* 35.csv in Resources */,
 				035F29880F5D419600553EDE /* 36.csv in Resources */,
 				035F29890F5D419600553EDE /* 37.csv in Resources */,
+				039D25461A7280E20093F5D3 /* 38.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +287,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Economacs.app/Contents/Frameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/iOrdning.app/Contents/Frameworks\"",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/iOrdning-bmdnwbtjuqlaqehkwpoczzuhhbnc/Build/Products/Debug",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -298,11 +312,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Economacs.app/Contents/Frameworks\"",
+					"\"$(SYSTEM_APPS_DIR)/iOrdning.app/Contents/Frameworks\"",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/iOrdning-bmdnwbtjuqlaqehkwpoczzuhhbnc/Build/Products/Debug",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -318,16 +333,12 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-				);
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx;
@@ -338,15 +349,11 @@
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					x86_64,
-					i386,
-				);
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PREBINDING = NO;
 				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
