@@ -28,19 +28,28 @@
 - (void)willAppear {
 	[taxController setManagedObjectContext:self.managedObjectContext];
 	[taxController updateAccountSelection];
+    Company *foretag = [Company inContext:self.managedObjectContext];
+    [self.formatter setCurrencyCode:foretag.currency];
+    [self.formatter setGeneratesDecimalNumbers:YES];
+    [self.formatter setMaximumFractionDigits:0];
+    
+    [taxController addObserver:taxController forKeyPath:@"bruttolon" options:0 context:NULL];
+    [taxController addObserver:taxController forKeyPath:@"lonekostnad" options:0 context:NULL];
+    [taxController addObserver:taxController forKeyPath:@"utbetalning" options:0 context:NULL];
+    [taxController addObserver:taxController forKeyPath:@"selectedTable" options:0 context:NULL];
 }
 
 - (void)willDisappear {
-	
+    [taxController removeObserver:taxController forKeyPath:@"bruttolon"];
+    [taxController removeObserver:taxController forKeyPath:@"lonekostnad"];
+    [taxController removeObserver:taxController forKeyPath:@"utbetalning"];
+    [taxController removeObserver:taxController forKeyPath:@"selectedTable"];
 }
-
 
 @end
 
 
 @implementation MainController
-
-
 
 - (Class)viewControllerClass {
 	return [MainViewController class];
@@ -48,7 +57,7 @@
 
 
 - (NSString *)title {
-	return @"Löneberäkning 2014";
+	return @"Löneberäkning 2015";
 }
 
 - (enum ASPluginType)type {

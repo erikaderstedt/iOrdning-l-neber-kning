@@ -18,6 +18,7 @@
 }
 @property(nonatomic,retain) IBOutlet TaxController *taxController;
 @property(nonatomic,retain) NSManagedObjectContext *managedObjectContext;
+@property(nonatomic,retain) IBOutlet NSNumberFormatter *formatter;
 
 @end
 

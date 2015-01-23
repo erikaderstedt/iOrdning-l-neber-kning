@@ -13,6 +13,13 @@
 
 #define ARBETSGIVARAVGIFTER 0.3142
 
+enum ASABRecalculationReason {
+    kASABBruttolon = 1,
+    kASABLonekostnad,
+    kASABUtbetalning,
+    kASABSkattetabell
+};
+
 @interface TaxController : NSObject {
 	NSArray *taxTables;
 	
@@ -34,6 +41,8 @@
 	Account *account_lonekostnad;
 	
 	NSManagedObjectContext *managedObjectContext;
+    
+    BOOL recalculating;
 }
 @property(retain,readonly) NSArray *taxTables;
 @property(retain) NSString *entryTitle;

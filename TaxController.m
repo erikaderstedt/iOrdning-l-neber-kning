@@ -65,13 +65,9 @@
 
 - (NSArray *)taxTables {
 	if (taxTables == nil) {
-		// Download "Månadstabeller i excelformat" from www.skatteverket.se
-		// Open in Numbers, export as CSV.
-		// cut -f2-5 -d";" > 2009.csv
-		// Columns are
-		// tabell;range_start;range_stop;tax
-		// for i in `cat`; do egrep "$i;" 2010.csv | cut -f2-4 -d";" > $i.csv; done
-		// <enter 29 -> 37>
+		// http://www.skatteverket.se/privat/skatter/arbeteinkomst/vadblirskattenskattetabellermm/skattetabeller/kommunalaskattesatsermmunder2015/skattetabellerforberakningavpreliminaraskatt.4.3f4496fd14864cc5ac9de2e.html
+        // Download the text file "Månadslön".
+        // Run the script importeraSkatteverket.py on this file.
 		NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 		NSArray *tables = [bundle pathsForResourcesOfType:@"csv" inDirectory:nil];
 		taxTables = [NSMutableArray arrayWithCapacity:[tables count]];
@@ -92,6 +88,7 @@
 		
 		// This is not related, but we don't have anywhere else to put it :(
 		[self updateAccountSelection];
+        [taxTables retain];
 	}
 	return taxTables;
 }
@@ -113,9 +110,13 @@
 - (void)updateAccountSelection {
 	NSDictionary *defaults = [self accountSettings];
 	for (NSString *key in defaults) {
-		[self setValue:[Account accountWithNumber:[[NSUserDefaults standardUserDefaults] valueForKey:[defaults valueForKey:key]]																									  
-										inContext:[self managedObjectContext]]
-				forKey:key];
+        NSNumber *n = [[NSUserDefaults standardUserDefaults] valueForKey:[defaults valueForKey:key]];
+        Account *a = [Account locateAccountWithNumber:n inContext:[self managedObjectContext]];
+        if (a == nil) {
+            n = @([n integerValue]*10);
+            [Account locateAccountWithNumber:n inContext:[self managedObjectContext]];
+        }
+		[self setValue:a forKey:key];
 	}
 }
 
@@ -128,47 +129,94 @@
 
 #pragma mark -
 
-- (IBAction)updateCalculations:(id)sender {
-	if (selectedTable == nil) return;
-	
-	int t = [(NSView *)sender tag];
-	double b, u, l, d;
-	switch (t) {
-		case 1: // Bruttolön
-			b = [self.bruttolon doubleValue];
-			d = [selectedTable getTaxDeductionOn:b];
-			u = b - d;
-			l = floor(b * (1.0 + ARBETSGIVARAVGIFTER));
-			break;
-		case 2: // Lönekostnad
-			l = [self.lonekostnad doubleValue];
-			b = l / (1.0 + ARBETSGIVARAVGIFTER);
-			d = [selectedTable getTaxDeductionOn:b];
-			u = b - d;
-			break;
-		case 3: // Utbetalning
-			u = [self.utbetalning doubleValue];
-			b = ceil([selectedTable findGrossIncomeForPayment:u]);
-			l = floor(b * (1.0 + ARBETSGIVARAVGIFTER));
-			break;
-		default:
-			b = [self.bruttolon doubleValue];
-			l = [self.lonekostnad doubleValue];
-			u = [self.utbetalning doubleValue];			
-			break;
-	}
-	self.bruttolon = [NSDecimalNumber decimalNumberWithMantissa:abs((long)b) exponent:0 isNegative:(b < 0)];
-	self.lonekostnad = [NSDecimalNumber decimalNumberWithMantissa:abs((long)l) exponent:0 isNegative:(l < 0)];
-	self.utbetalning = [NSDecimalNumber decimalNumberWithMantissa:abs((long)u) exponent:0 isNegative:(u < 0)];
-	self.arbetsgivaravgifter = [self.lonekostnad decimalNumberBySubtracting:self.bruttolon];
-	self.askatt = [self.bruttolon decimalNumberBySubtracting:self.utbetalning];
-	
-	self.bruttolon = [self.bruttolon decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
-	self.lonekostnad = [self.lonekostnad decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
-	self.utbetalning = [self.utbetalning decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
-	
-	[[NSUserDefaults standardUserDefaults] setValue:selectedTable.name forKey:@"Loneberakning_table"];
-	[self storeAccountSettings];
+//- (void)textDidEndEditing:(NSNotification *)obj {
+//    NSTextField *field = (NSTextField *)[obj object];
+//    enum ASABRecalculationReason reason = (enum ASABRecalculationReason)[field tag];
+//    NSDecimalNumber *nuNumber = (NSDecimalNumber *)[[field formatter] numberFromString:[field stringValue]];
+//    BOOL update = NO;
+//    switch (reason) {
+//        case kASABBruttolon:
+//            update = ![nuNumber isEqualToNumber:self.bruttolon];
+//            break;
+//        case kASABLonekostnad:
+//            update = ![nuNumber isEqualToNumber:self.lonekostnad];
+//            break;
+//        case kASABUtbetalning:
+//            update = ![nuNumber isEqualToNumber:self.utbetalning];
+//            break;
+//        default:
+//            break;
+//    }
+//    if (update)
+//        [self recalculate:reason];
+//}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (recalculating) return;
+    if ([keyPath isEqualToString:@"bruttolon"]) {
+        [self recalculate:kASABBruttolon];
+    } else if ([keyPath isEqualToString:@"lonekostnad"]) {
+        [self recalculate:kASABLonekostnad];
+    } else if ([keyPath isEqualToString:@"utbetalning"]) {
+        [self recalculate:kASABUtbetalning];
+    } else if ([keyPath isEqualToString:@"selectedTable"]) {
+        [self recalculate:kASABSkattetabell];
+        
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)recalculate:(enum ASABRecalculationReason)reason {
+    double b, u, l, d;
+    recalculating = YES;
+    switch (reason) {
+        case kASABBruttolon:
+            b = [self.bruttolon doubleValue];
+            d = [selectedTable getTaxDeductionOn:b];
+            u = b - d;
+            l = floor(b * (1.0 + ARBETSGIVARAVGIFTER));
+            break;
+        case kASABLonekostnad:
+            l = [self.lonekostnad doubleValue];
+            b = l / (1.0 + ARBETSGIVARAVGIFTER);
+            d = [selectedTable getTaxDeductionOn:b];
+            u = b - d;
+            break;
+        case kASABUtbetalning:
+            u = [self.utbetalning doubleValue];
+            b = ceil([selectedTable findGrossIncomeForPayment:u]);
+            l = floor(b * (1.0 + ARBETSGIVARAVGIFTER));
+            break;
+        case kASABSkattetabell:
+            b = [self.bruttolon doubleValue];
+            l = [self.lonekostnad doubleValue];
+            u = [self.utbetalning doubleValue];
+            break;
+        default:
+            break;
+    }
+    if (reason != kASABBruttolon || self.bruttolon == nil)
+        self.bruttolon = [NSDecimalNumber decimalNumberWithMantissa:abs((long)b) exponent:0 isNegative:(b < 0)];
+    if (reason != kASABLonekostnad || self.lonekostnad == nil)
+        self.lonekostnad = [NSDecimalNumber decimalNumberWithMantissa:abs((long)l) exponent:0 isNegative:(l < 0)];
+    if (reason != kASABUtbetalning || self.utbetalning == nil)
+        self.utbetalning = [NSDecimalNumber decimalNumberWithMantissa:abs((long)u) exponent:0 isNegative:(u < 0)];
+    
+    self.arbetsgivaravgifter = [self.lonekostnad decimalNumberBySubtracting:self.bruttolon];
+    self.askatt = [self.bruttolon decimalNumberBySubtracting:self.utbetalning];
+    
+    if (reason != kASABBruttolon)
+        self.bruttolon = [self.bruttolon decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
+    if (reason != kASABLonekostnad)
+        self.lonekostnad = [self.lonekostnad decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
+    if (reason != kASABUtbetalning)
+        self.utbetalning = [self.utbetalning decimalNumberByRoundingAccordingToBehavior:[NSDecimalNumber defaultBehavior]];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:selectedTable.name forKey:@"Loneberakning_table"];
+    [self storeAccountSettings];
+    recalculating = NO;
 }
 
 - (IBAction)createEntry:(id)sender {
@@ -186,26 +234,31 @@
 	r.entry = e;
 	r.account = account_krediteras;
 	r.credit = self.utbetalning;
+    r.stricken = @NO;
 	
 	r = [NSEntityDescription insertNewObjectForEntityForName:@"Row" inManagedObjectContext:[self managedObjectContext]];
 	r.entry = e;
 	r.account = account_lonekostnad;
 	r.debit = self.bruttolon;
+    r.stricken = @NO;
 	
 	r = [NSEntityDescription insertNewObjectForEntityForName:@"Row" inManagedObjectContext:[self managedObjectContext]];
 	r.entry = e;
 	r.account = account_arbetsgivaravgifter_kostnad;
 	r.debit = [self.lonekostnad decimalNumberBySubtracting:self.bruttolon];
+    r.stricken = @NO;
 	
 	r = [NSEntityDescription insertNewObjectForEntityForName:@"Row" inManagedObjectContext:[self managedObjectContext]];
 	r.entry = e;
 	r.account = account_arbetsgivaravgifter;
 	r.credit = [self.lonekostnad decimalNumberBySubtracting:self.bruttolon];
+    r.stricken = @NO;
 	
 	r = [NSEntityDescription insertNewObjectForEntityForName:@"Row" inManagedObjectContext:[self managedObjectContext]];
 	r.entry = e;
 	r.account = account_skatt;
 	r.credit = [self.bruttolon decimalNumberBySubtracting:self.utbetalning];
+    r.stricken = @NO;
 	
 	e.name = self.entryTitle;
 	e.date = [self.paymentDay dateIndex];
