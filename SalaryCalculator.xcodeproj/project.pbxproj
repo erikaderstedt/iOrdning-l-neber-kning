@@ -205,7 +205,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "SalaryCalculator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -302,6 +302,7 @@
 				GCC_PREFIX_HEADER = SalaryCalculator_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = se.aderstedtsoftware.salaryplugin;
 				PRODUCT_NAME = SalaryCalculator;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -324,6 +325,7 @@
 				GCC_PREFIX_HEADER = SalaryCalculator_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Application Support/Economacs/Plug-ins/";
+				PRODUCT_BUNDLE_IDENTIFIER = se.aderstedtsoftware.salaryplugin;
 				PRODUCT_NAME = SalaryCalculator;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = bundle;
@@ -333,6 +335,7 @@
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
