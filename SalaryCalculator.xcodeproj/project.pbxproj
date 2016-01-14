@@ -32,8 +32,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		035F2A8B0F5DBE4700553EDE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "~/Library/Application Support/Economacs4/Plug-ins/";
+			buildActionMask = 12;
+			dstPath = "~/Library/Application Support/Economacs plug-ins";
 			dstSubfolderSpec = 0;
 			files = (
 				035F2A880F5DBE4000553EDE /* SalaryCalculator.bundle in CopyFiles */,
